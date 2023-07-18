@@ -1,0 +1,131 @@
+@import './app.scss';
+
+Header{
+    min-height: 10vh;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap:8rem;
+    background-color: $almostWhite;
+}
+
+.logoContainer{
+    font-size: $fontSizeLogo;
+    font-weight: 700;
+}
+
+.mainNav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .navLinks{
+        list-style: none;
+        display: flex;
+        gap: 5rem;  
+        font-size: $fontSizeSmall;
+        color:$almostBlack;
+        color: $mediumGray;
+        a{
+            text-decoration: none;
+            color: inherit;
+            position: relative;
+        }
+    }
+    .navBtns{
+        display: flex;
+        gap:2rem;
+
+        button{
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+            color:$mediumGray;
+            background-color: transparent;
+            border: 1px solid $mediumGray;
+            font-weight: 500;
+            font-size: $fontSizeSmall;
+
+            &:hover{
+                color: black;
+                border: 1px solid black;
+            }
+        }
+
+        .login{
+            border: none;
+            &:hover{
+                border: none;
+            }
+        }
+    }
+}
+
+.navToggleBtn{
+    display: none;
+}
+
+
+
+
+@media (max-width: 376px){
+    header[data-overlay = "true"]{
+        &::before{
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top:0;
+            left: 0;
+            background-color:rgba(0,0,0,0.5);
+        }
+
+        .navToggleBtn{
+            background-image: url('../assets/intro-section-with-dropdown-navigation-main/images/icon-close-menu.svg');
+        }
+    }
+    .mainNav{
+        transform: translateX(100%);
+        position:fixed;
+        z-index: 1000;
+        inset: 0 0 0 40%;
+        background-color: white;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: min(30vh, 10rem) 2rem;
+        gap: 2rem;
+        transition: transform 300ms ease-out;
+        
+        .navLinks{
+            flex-direction: column;
+            gap:2rem;
+            
+        }
+        .navBtns{
+            flex-direction: column;
+            gap:0;
+            width: 50vw;
+        }
+
+
+    }
+
+    .navToggleBtn{
+        display: block;
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        z-index: 9000;
+        width: 3rem;
+        aspect-ratio: 1;
+        background-image: url('../assets/intro-section-with-dropdown-navigation-main/images/icon-menu.svg');
+        background-repeat: no-repeat;
+        border: none;
+        background-color: transparent;
+    }
+
+    .mainNav[data-visability = 'true']{
+        transform: translateX(0);
+    }
+}

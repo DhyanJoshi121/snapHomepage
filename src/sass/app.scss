@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Epilogue', sans-serif;
+    overflow-x: hidden;
+}
+
+
+
+
+
+
+$fontSizeSmall: 1.8rem;
+$fontSizeMedium: 2.5rem;
+$fontSizeLogo: 4rem;
+$fontSizeTitle: 8rem;
+
+
+$almostWhite: hsl(0, 0%, 98%);
+$mediumGray: hsl(0, 0%, 41%);
+$almostBlack: hsl(0, 0%, 8%);
+
+main{
+    background-color: $almostWhite;
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.hero{
+    // display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    // background-color: white;
+    width: 80%;
+    height: 80%;
+    margin: 0 auto;
+
+    .heroImgContainer{
+        // flex: 1 1 auto;
+        position: relative;
+        width: 100%;
+        img{
+            position: absolute;
+            inset: 0 0 0 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+
+    .heroContent{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 3rem;
+        position: relative;
+        
+        .heroTitle{
+            font-size: $fontSizeTitle;
+            font-weight: 700;
+            padding-right: 4rem;
+        }
+
+        .heroText{
+            font-size: $fontSizeSmall;
+            font-weight: 500;
+            color: $mediumGray;
+            line-height: $fontSizeMedium;
+            width: 80%;
+            margin-right: auto;
+            font-family: inherit;
+        }
+
+        .learnMore{
+            background-color: $almostBlack;
+            color: $almostWhite;
+            padding: 2rem 4rem;
+            border-radius: 2rem;
+            font-size: $fontSizeSmall;
+            font-family: inherit;
+            font-weight: 500;
+
+            &:hover{
+                background-color: transparent;
+                color: black;
+            }
+        }
+
+        .clients{
+            list-style: none;
+            position:absolute;
+            left: 0;
+            bottom: 2rem;
+            width: 100%;
+            display: flex;
+            justify-content: space-between; 
+            padding-right: 4rem;
+        }
+    }
+
+}

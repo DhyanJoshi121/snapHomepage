@@ -1,0 +1,35 @@
+@import './app.scss';
+
+.dropDownContainer{
+    position: absolute;
+    background-color: white;
+    top: calc(100% + 1rem);
+    right: 0;
+    font-size: $fontSizeSmall;
+    border-radius: 1rem;
+    padding: 2rem;
+    width: max-content;
+    box-shadow: 0 .1rem .3rem 0 $mediumGray;
+    
+    .dropDownList{
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        li{
+            display: flex;
+            gap: 1rem;
+        }
+    }
+}
+
+@media (max-width: 376px){
+    .dropDownContainer{
+        position:initial;
+        background-color: transparent;
+        
+        .dropDownList{
+            gap: 2rem;
+        }
+    }
+}
